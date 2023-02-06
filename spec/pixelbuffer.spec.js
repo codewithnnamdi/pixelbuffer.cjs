@@ -1,5 +1,7 @@
-import {assert,expect} from './chai.js';
-import PixelBuffer from '../src/pixelbuffer.js';
+import chai from './chai.js';
+import "../src/pixelbuffer.js";
+
+var { expect, assert } = chai;
 
 describe('pixelbuffer', function () {
   it("should create a pixelbuffer", function () {
@@ -20,7 +22,5 @@ describe('pixelbuffer', function () {
   it("should have a data array of the correct size", function () {
     expect(pb.getData().length).to.equal(10 * 10 * 4);
   })
-
-  
 
 })

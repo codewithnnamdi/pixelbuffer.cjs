@@ -3,17 +3,14 @@
   'use strict';
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([],
-      function () {
-        return (root.PixelBuffer = factory());
-      });
-
+    define([], () => (root.PixelBuffer = factory()));
+    
   } else if ((typeof module === 'object') && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like enviroments that support module.exports,
     // like Node.
     module.exports = exports = factory();
-    
+
   } else if (!module.exports && (exports === undefined)) {
     // For CommonJS with exports, but without module.exports,
     Object.defineProperty(exports, "__esModule", {
