@@ -1,5 +1,4 @@
 import chai from './chai.js';
-import "../src/pixelbuffer.js";
 
 var { expect, assert } = chai;
 
