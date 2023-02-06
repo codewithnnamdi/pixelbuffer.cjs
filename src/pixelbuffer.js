@@ -130,7 +130,12 @@
       data[i + 3] = a;
     }
   }
-
+/**
+ * Draw a pixel buffer onto this pixel buffer
+ * @param {*} pixelBuffer 
+ * @param {*} x 
+ * @param {*} y 
+ */
   PixelBuffer.prototype.drawPixelBuffer = function (pixelBuffer, x, y) {
     var data = this.data;
     var pixelBufferData = pixelBuffer.getData();
@@ -150,6 +155,16 @@
   }
 
 
+  /**
+   * 
+   * @param {*} x 
+   * @param {*} y 
+   * @param {*} r 
+   * @param {*} g 
+   * @param {*} b 
+   * @param {*} a 
+   */
+
   PixelBuffer.prototype.drawPixel = function (x, y, r, g, b, a) {
     var index = (y * this.width + x) * 4;
     this.data[index] = r;
@@ -159,7 +174,7 @@
   }
 
 
-  PixelBuffer.prototype.toRGBString = function () {
+  PixelBuffer.prototype.toRGBA = function () {
     var data = this.data;
     var len = data.length;
     var str = '';
@@ -170,7 +185,7 @@
     return str;
   }
 
-  PixelBuffer.prototype.toHSLString = function () {
+  PixelBuffer.prototype.toHSLA = function () {
     var data = this.data;
     var len = data.length;
     var str = '';

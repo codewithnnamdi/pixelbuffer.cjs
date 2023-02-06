@@ -25,11 +25,12 @@ var x = 0;
 var y = 0;
 var width = canvas.width / colors.length;
 var height = canvas.height 
+var pb = new PixelBuffer(canvas.width, canvas.height);
 
 // draw the colors
 for (var i = 0; i < colors.length; i++) {
     var color = colors[i];
-    ctx.fillStyle = 'rgba(' + color.r + ',' + color.g + ',' + color.b + ',' + color.a + ')';
+    ctx.fillStyle = pb.toRGA(color);
     ctx.fillRect(x, y, width, height);
     x += width;
 }
