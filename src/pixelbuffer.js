@@ -10,11 +10,13 @@
     // like Node.
     module.exports = exports = factory();
 
-  } else if (!module.exports && (exports === undefined)) {
-    // For CommonJS with exports, but without module.exports,
+  } else if ((typeof exports !== 'undefined') ) {
+    // For CommonJS with exports, 
+    // but without module.exports,
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
+
     exports["default"] = factory();
   }
   else {
