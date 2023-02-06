@@ -16,8 +16,10 @@
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
+
     exports["default"] = factory();
   }
+  
   else {
     // Browser globals (root is window)
     root.PixelBuffer = factory();
