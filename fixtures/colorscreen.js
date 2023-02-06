@@ -27,14 +27,8 @@ var width = canvas.width / colors.length;
 var height = canvas.height 
 var pb = new PixelBuffer(canvas.width, canvas.height);
 
-// draw the colors
-for (var i = 0; i < colors.length; i++) {
+for(var i = 0; i < colors.length; i++){
     var color = colors[i];
-    ctx.fillStyle = pb.toRGA(color);
-    ctx.fillRect(x, y, width, height);
+    pb.fill(x, y, width, height, color.r, color.g, color.b, color.a);
     x += width;
 }
-
-
-
-
