@@ -208,6 +208,16 @@
     return new PixelBuffer(width, height);
   }
 
+  PixelBuffer.prototype.setImageData = function (imageData) {
+    this.data = imageData.data;
+    this.width = imageData.width;
+    this.height = imageData.height;
+  }
+
+  PixelBuffer.prototype.getImageData = function () {
+    return new ImageData(this.data, this.width, this.height);
+  }
+  
   PixelBuffer.prototype.toString = function (type) {
     switch (type) {
       case 'rgba':
@@ -216,9 +226,10 @@
         return this.toStrHSL();
       default:
         return this.toStrRGBA();
-    }
+      
   }
 
+}
 
   return PixelBuffer
 
