@@ -1,5 +1,5 @@
 {  // Change this to match your project
-  "files": ["src/pixelbuffer.js"],
+  "files": ["src/lib/pixelbuffer.cjs"],
   "compilerOptions": {
     // Tells TypeScript to read JS files, as
     // normally they are ignored as source files
