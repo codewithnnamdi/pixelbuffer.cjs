@@ -22,9 +22,13 @@
     "browser"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "see LICENSE file",
   "bugs": {
     "url": "https://github.com/magicmanna/pixelbuffer.js/issues"
   },
-  "homepage": "https://github.com/magicmanna/pixelbuffer.js#readme"
+  "homepage": "https://github.com/magicmanna/pixelbuffer.js#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1"
+  }
 }

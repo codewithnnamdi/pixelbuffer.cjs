@@ -1,10 +1,10 @@
 {
   "name": "pixelbuffer.js",
   "version": "0.0.0",
-  "description": "",
+  "description": "pixelbuffer.js - Manipulate Pixel in NodeJS and on the HTMl5Canvas.",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/magicmanna/pixelbuffer.js"
   },
   "dependencies": {
 
