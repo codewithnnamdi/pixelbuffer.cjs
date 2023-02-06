@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "description": "pixelbuffer.js - Manipulate Pixel from NodeJS and on the HTMl5Canvas.",
   "main": "src/pixelbuffer.js",
+  "types": "src/pixelbuffer.d.ts",
+  "files": [
+    "src/pixelbuffer.js",
+    "src/pixelbuffer.d.ts"
+  ],
+  "type": "module",
   "directories": {
-    "test": "test"
+    "test": "spec"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha spec/*.spec.js"
   },
   "repository": {
     "type": "git",

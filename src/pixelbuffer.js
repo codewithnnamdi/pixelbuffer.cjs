@@ -1,8 +1,6 @@
 // close all unclosed modules
-;(function (root, factory) {
-
+; (function (root, factory) {
   'use strict';
-
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define([],
@@ -14,12 +12,20 @@
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like enviroments that support module.exports,
     // like Node.
-    module.exports = factory();
-  } else {
-    // Browser globals
+    module.exports = exports = factory();
+    
+  } else if (!module.exports && (exports === undefined)) {
+    // For CommonJS with exports, but without module.exports,
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = factory();
+  }
+  else {
+    // Browser globals (root is window)
     root.PixelBuffer = factory();
   }
-  
+
 }(typeof this !== "undefined" ? this : globalThis, function (root) {
 
   // UMD Definition above, do not remove this line
@@ -180,6 +186,8 @@
   PixelBuffer.create = function (width, height) {
     return new PixelBuffer(width, height);
   }
+
+
 
   return PixelBuffer
 
