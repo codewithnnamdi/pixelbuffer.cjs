@@ -5,11 +5,10 @@
  * browser node tree is is used to test the class.
  */
 
-var canvas =document.getElementById('canvas');
+var canvas =document.getElementById('pb');
 var ctx = canvas.getContext('2d');
 
 // a color screen(roygbiv)
-
 var colors = [
     {r:255, g:0, b:0, a:255}, // red
     {r:255, g:165, b:0, a:255}, // orange
