@@ -1,2 +1,2 @@
-var PixeBuffer = require('./lib/pixelbuffer.js');
-module.exports = exports = PixeBuffer;
+var PixelBuffer = require('./lib/pixelbuffer.js');
+module.exports = exports = PixelBuffer;

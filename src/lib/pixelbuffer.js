@@ -3,14 +3,14 @@
   'use strict';
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([], () => (root.PixelBuffer = factory()));  
+    define([], () => (root.PixelBuffer = factory()));
   } else if ((typeof module === 'object') && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like enviroments that support module.exports,
     // like Node.
-    module.exports = exports = factory();
+    module.exports = factory();
 
-  } else if ((typeof exports !== 'undefined') ) {
+  } else if ((typeof exports !== 'undefined') && !(module.exports)) {
     // For CommonJS with exports, don't create a global.
     // but without module.exports,
     Object.defineProperty(exports, "__esModule", {
@@ -130,12 +130,12 @@
       data[i + 3] = a;
     }
   }
-/**
- * Draw a pixel buffer onto this pixel buffer
- * @param {*} pixelBuffer 
- * @param {*} x 
- * @param {*} y 
- */
+  /**
+   * Draw a pixel buffer onto this pixel buffer
+   * @param {*} pixelBuffer 
+   * @param {*} x 
+   * @param {*} y 
+   */
   PixelBuffer.prototype.drawPixelBuffer = function (pixelBuffer, x, y) {
     var data = this.data;
     var pixelBufferData = pixelBuffer.getData();
@@ -184,7 +184,7 @@
     return str;
   }
 
-  PixelBuffer.prototype.toRGBA = function (i,j){
+  PixelBuffer.prototype.toRGBA = function (i, j) {
     var index = (j * this.width + i) * 4;
     return {
       r: this.data[index],
@@ -217,7 +217,7 @@
   PixelBuffer.prototype.getImageData = function () {
     return new ImageData(this.data, this.width, this.height);
   }
-  
+
   PixelBuffer.prototype.toString = function (type) {
     switch (type) {
       case 'rgba':
@@ -226,10 +226,10 @@
         return this.toStrHSL();
       default:
         return this.toStrRGBA();
-      
-  }
 
-}
+    }
+
+  }
 
   return PixelBuffer
 
