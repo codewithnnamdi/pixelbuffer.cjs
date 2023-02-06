@@ -140,7 +140,6 @@
     var data = this.data;
     var pixelBufferData = pixelBuffer.getData();
     var pixelBufferWidth = pixelBuffer.getWidth();
-    var pixelBufferHeight = pixelBuffer.getHeight();
     var len = pixelBufferData.length;
     var index;
     var pixelBufferIndex;
@@ -174,7 +173,7 @@
   }
 
 
-  PixelBuffer.prototype.toRGBAString = function () {
+  PixelBuffer.prototype.toStrRGBA = function () {
     var data = this.data;
     var len = data.length;
     var str = '';
@@ -195,7 +194,7 @@
     }
   }
 
-  PixelBuffer.prototype.toHSLAString = function () {
+  PixelBuffer.prototype.toStrHSLA = function () {
     var data = this.data;
     var len = data.length;
     var str = '';
@@ -210,13 +209,13 @@
   }
 
   PixelBuffer.prototype.toString = function (type) {
-   switch(type){
+    switch (type) {
       case 'rgba':
-        return this.toRGBAString();
+        return this.toStrRGBA();
       case 'hsla':
-        return this.toHSLAString();
+        return this.toStrHSL();
       default:
-        return this.toRGBAString();
+        return this.toStrRGBA();
     }
   }
 

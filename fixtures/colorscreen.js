@@ -27,30 +27,14 @@ var height = canvas.height ;
 
 var pb = new PixelBuffer(canvas.width, canvas.height);
 
+
 // create a noise pattern
 // use the pixel buffer to draw the noise pattern
-for(var i = 0; i < pb.width; i++){
-   
-    for(var j = 0; j < pb.height; j++){
-        var r = Math.floor(Math.random() * 255);
-        var g = Math.floor(Math.random() * 255);
-        var b = Math.floor(Math.random() * 255);
-        var a = 255;
-        pb.setPixel(i, j, r, g, b, a);
-        ctx.fillStyle = pb.toRGBA(i, j)
-        .toString();
 
-    }
-    ctx.fillRect(x, y, width, height);
+// draw the noise pattern to the canvas
+// use the canvas to draw the noise pattern
+
+for(var i = 0; i < colors.length; i++){
+    pb.fill(x, y, width, height, colors[i]);
     x += width;
 }
-
-// for(var i = 0; i < colors.length; i++){
-//     var color = colors[i];
-//     ctx.fillStyle = 'rgba(' + color.r + ',' + color.g + ',' + color.b + ',' + color.a + ')';
-//     ctx.fillRect(x, y, width, height);
-//     x += width;
-
-   
-
-// }
