@@ -6,8 +6,9 @@
     "type": "git",
     "url": "https://github.com/magicmanna/pixelbuffer.js"
   },
-  "dependencies": {
-
+  "main": "src/pixelbuffer.js",
+  "scripts": {
+    "test": "open spec/pixelbuffer.js"
   }
 }
 
