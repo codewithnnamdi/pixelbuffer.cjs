@@ -174,7 +174,7 @@
   }
 
 
-  PixelBuffer.prototype.toRGBA = function () {
+  PixelBuffer.prototype.toRGBAString = function () {
     var data = this.data;
     var len = data.length;
     var str = '';
@@ -185,7 +185,17 @@
     return str;
   }
 
-  PixelBuffer.prototype.toHSLA = function () {
+  PixelBuffer.prototype.toRGBA = function (i,j){
+    var index = (j * this.width + i) * 4;
+    return {
+      r: this.data[index],
+      g: this.data[index + 1],
+      b: this.data[index + 2],
+      a: this.data[index + 3]
+    }
+  }
+
+  PixelBuffer.prototype.toHSLAString = function () {
     var data = this.data;
     var len = data.length;
     var str = '';
@@ -199,6 +209,16 @@
     return new PixelBuffer(width, height);
   }
 
+  PixelBuffer.prototype.toString = function (type) {
+   switch(type){
+      case 'rgba':
+        return this.toRGBAString();
+      case 'hsla':
+        return this.toHSLAString();
+      default:
+        return this.toRGBAString();
+    }
+  }
 
 
   return PixelBuffer
