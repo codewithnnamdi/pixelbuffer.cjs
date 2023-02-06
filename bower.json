@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/magicmanna/pixelbuffer.js"
   },
-  "main": "src/pixelbuffer.js",
+  "main": "src/lib/pixelbuffer.js",
   "author": "magicmanna",
   "license": "see LICENSE file",
   "scripts": {
