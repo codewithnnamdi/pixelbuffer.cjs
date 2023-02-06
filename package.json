@@ -8,7 +8,6 @@
     "src/pixelbuffer.js",
     "src/pixelbuffer.d.ts"
   ],
-  "type": "module",
   "directories": {
     "test": "spec",
     "example": "fixtures"
