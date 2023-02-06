@@ -1,6 +1,7 @@
 
 var canvas = document.getElementById('pixelbuffer');
 var ctx = canvas.getContext('2d');
+
 var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 var data = imageData.data;
 
