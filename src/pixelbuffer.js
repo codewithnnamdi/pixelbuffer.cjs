@@ -11,12 +11,11 @@
     module.exports = exports = factory();
 
   } else if ((typeof exports !== 'undefined') ) {
-    // For CommonJS with exports, 
+    // For CommonJS with exports, don't create a global.
     // but without module.exports,
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-
     exports["default"] = factory();
   }
   else {

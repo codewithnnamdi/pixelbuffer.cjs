@@ -10,7 +10,8 @@
   ],
   "type": "module",
   "directories": {
-    "test": "spec"
+    "test": "spec",
+    "example": "spec/fixtures"
   },
   "scripts": {
     "test": "mocha spec/*.spec.js"

@@ -1,6 +1,7 @@
 var { expect, assert } = chai;
 
 describe('pixelbuffer', function () {
+  
   it("should create a pixelbuffer", function () {
     var pb = new PixelBuffer.create(10, 10);
     expect(pb).to.be.an.instanceof(PixelBuffer);
@@ -25,6 +26,6 @@ describe('pixelbuffer', function () {
     expect(pb.fill).to.be.a('function');
   })
 
-  
+
 
 })
