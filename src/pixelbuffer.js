@@ -1,12 +1,16 @@
 // close all unclosed modules
-; (function (root, factory) {
+;(function (root, factory) {
 
   'use strict';
 
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([], factory());
-  } else if (typeof exports === 'object') {
+    define([],
+      function () {
+        return (root.PixelBuffer = factory());
+      });
+
+  } else if ((typeof module === 'object') && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like enviroments that support module.exports,
     // like Node.
@@ -15,11 +19,11 @@
     // Browser globals
     root.PixelBuffer = factory();
   }
+  
+}(typeof this !== "undefined" ? this : globalThis, function (root) {
 
-}(typeof this !== "undefined" ? this : globalThis, function () {
   // UMD Definition above, do not remove this line
   'use strict';
-
   /**
    * @constructor PixelBuffer
    * A Pixebuffer is a 2D array of pixels.
@@ -28,6 +32,7 @@
    * @param {*} height 
    * @returns 
    */
+
   var PixelBuffer = function (width, height) {
     this.width = width;
     this.height = height;
@@ -36,7 +41,7 @@
   }
 
   /**
-   * @member getPixel - get the pixel at x,y
+   * @member Pixebuffer - get the pixel at x,y
    * @param {number} x 
    * @param {number} y 
    * @returns 
@@ -52,7 +57,7 @@
   }
 
   /**
-   * @member setPixel - set the pixel at x,y
+   * @memberof Pixebuffer - set the pixel at x,y
    * @param {*} x 
    * @param {*} y 
    * @param {*} r 
@@ -70,7 +75,7 @@
 
 
   /**
-   * @member getData - get the pixel data
+   * @memberof Pixebuffer - get the pixel data
    * @returns {Uint8ClampedArray}
    */
   PixelBuffer.prototype.getData = function () {
@@ -78,8 +83,9 @@
   }
 
   /**
-   * 
-   * @returns 
+  * @memberof PixelBuffer 
+   * @member getWidth - get the width of the pixel buffer
+   * @returns number
    */
   PixelBuffer.prototype.getWidth = function () {
     return this.width;
@@ -157,7 +163,7 @@
     for (var i = 0; i < len; i += 4) {
       str += 'rgba(' + data[i] + ',' + data[i + 1] + ',' + data[i + 2] + ',' + data[i + 3] / 255 + ')';
     }
-    
+
     return str;
   }
 
@@ -174,7 +180,7 @@
   PixelBuffer.create = function (width, height) {
     return new PixelBuffer(width, height);
   }
-  
+
   return PixelBuffer
 
 }));

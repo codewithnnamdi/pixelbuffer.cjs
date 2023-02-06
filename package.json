@@ -1,9 +1,8 @@
 {
   "name": "pixelbuffer",
   "version": "0.1.0",
-  "description": "pixelbuffer.js - Manipulate Pixel in NodeJS and on the HTMl5Canvas.",
+  "description": "pixelbuffer.js - Manipulate Pixel from NodeJS and on the HTMl5Canvas.",
   "main": "src/pixelbuffer.js",
-  "type": "module",
   "directories": {
     "test": "test"
   },
